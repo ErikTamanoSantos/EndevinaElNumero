@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     int num = (int) (Math.random()*10);
 
-    public ArrayList<Record> records = new ArrayList<Record>();
+    public static ArrayList<Record> records = new ArrayList<Record>();
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RecordsActivity.class);
+                RecordsActivity.records = MainActivity.records;
                 startActivity(intent);
             }
         });
@@ -83,6 +84,3 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-class WinnersActivity extends AppCompatActivity {
-
-}
