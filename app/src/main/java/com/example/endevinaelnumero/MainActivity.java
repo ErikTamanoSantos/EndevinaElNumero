@@ -21,9 +21,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-    int num = (int) (Math.random()*10);
+    int num = 1;
 
-    public ArrayList<Record> records = new ArrayList<Record>();
+    public static ArrayList<Record> records = new ArrayList<Record>();
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             textContador.setText("0");
                             entrada.setText("");
                             hist.setText("Historial:");
-                            num = (int) (Math.random()*10);
+                            num = 1;
                         }
                     });
                     popup.create();
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RecordsActivity.class);
+                RecordsActivity.records = MainActivity.records;
                 startActivity(intent);
             }
         });
