@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-    int num = 1;
+    int num = (int) (Math.random() * 10);
 
     public static ArrayList<Record> records = new ArrayList<Record>();
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             textContador.setText("0");
                             entrada.setText("");
                             hist.setText("Historial:");
-                            num = 1;
+                            num = (int) (Math.random() * 10);
                         }
                     });
                     popup.create();
